@@ -1,2 +1,27 @@
-$blue-color: blue;
+$blue-color: #2f82ff;
+$grey-color: #f8f8f8;
 $shadow-1: rbga(99,99,99,.2) 0px 2px 8px 0px;
+.btn_primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: #000;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 2px;
+}
+.btn_secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: $blue-color;
+    background: $grey-color;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 2px;
+}
