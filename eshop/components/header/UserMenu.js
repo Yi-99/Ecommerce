@@ -1,9 +1,9 @@
 import styles from './styles.module.scss';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export default function UserMenu({loggedIn}) {
     return (
-        <div className={styles.userMenu}>
+        <div className={styles.menu}>
             <h4>Welcome to Eshop</h4>
             {
                 loggedIn ? (
@@ -19,25 +19,25 @@ export default function UserMenu({loggedIn}) {
                 </div>) : (
                     <div className={styles.flex}>
                         <button className={styles.btn_primary}>Register</button>
-                        <button className={styles.btn_secondary}>Login</button>
+                        <button className={styles.Linkbtn_secondary}>Login</button>
                     </div>
                 )
             }
             <ul>
                 <li>
-                    <Link to="/profile">Account</Link>
+                    <Link href="/profile">Account</Link>
                 </li>
                 <li>
-                    <Link to="/profile/orders">My Orders</Link>
+                    <Link href="/profile/orders">My Orders</Link>
                 </li>
                 <li>
-                    <Link to="/profile/messages">Message Center</Link>
+                    <Link href="/profile/messages">Message Center</Link>
                 </li>
                 <li>
-                    <Link to="/profile/address">Address</Link>
+                    <Link href="/profile/address">Address</Link>
                 </li>
                 <li>
-                    <Link to="/profile/wishlist">Wishlist</Link>
+                    <Link href="/profile/wishlist">Wishlist</Link>
                 </li>
             </ul>
         </div>

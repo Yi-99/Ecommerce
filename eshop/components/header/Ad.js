@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Ad() {
   return (
-    <Link to="/browse">
+    <Link href="/browse">
       <div className={styles.ad}></div>  
     </Link>
   )

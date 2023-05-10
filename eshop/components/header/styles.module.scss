@@ -3,8 +3,7 @@
     box-shadow: $shadow-1;
 }
 
-//AD----------------------------------------------------------------------------------------------------------
-.ad {
+/*----------------AD----------------*/.ad {
     height: 54px;
     width: 100%;
     background-image: url('../../public/images/ad.jpg');
@@ -13,7 +12,7 @@
     background-position: 50% 50%;
 }
 
-//TOP---------------------------------------------------------------------------------------------------------
+/*----------------TOP----------------*/
 .top {
     background: #f8f8f8;
     border-top: 1px solid #eee;
@@ -104,7 +103,6 @@
 
 .menu {
     width: 280px;
-    height: 100%;
     box-shadow: $shadow-1;
     position: absolute;
     top: 100%;
@@ -115,14 +113,34 @@
     flex-direction: column;
     gap: 1rem;
     padding: 1rem 0;
+    min-height: 200px;
     
     h4 {
         text-align: center;
     }
     .flex {
         display: flex !important;
+        flex-direction: row !important;
         gap: 10px !important;
         width: 100%;
         padding: 0 1rem;
+    }
+    ul {
+        li {
+            height: 30px;
+            list-style: none;
+            a {
+                width: 100%;
+                padding-left: 1rem !important;
+                text-decoration: none;
+                color: #666;
+                &:hover {
+                    color: #222;
+                }
+            }
+            &:hover {
+                background: #eeeeeebe;
+            }
+        }
     }
 }

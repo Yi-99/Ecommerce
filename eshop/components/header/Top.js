@@ -1,8 +1,8 @@
-import styles from './styles.module.scss'
+import styles from './styles.module.scss';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import {MdSecurity} from 'react-icons/md'
-import {BsSuitHeart} from 'react-icons/bs'
+import Link from 'next/link';
+import {MdSecurity} from 'react-icons/md';
+import {BsSuitHeart} from 'react-icons/bs';
 import UserMenu from './UserMenu';
 import {RiAccountPinCircleLine, RiArrowDropDownFill} from 'react-icons/ri'
 
@@ -14,27 +14,27 @@ export default function Top() {
     <div className={styles.top}>
       <div className={styles.top__container}>
         <ul className={styles.top__list}>
-          <li>
+          <li className={styles.li}>
             <img src="https://static.vecteezy.com/system/resources/previews/011/571/524/original/circle-flag-of-south-korea-free-png.png" alt="South Korean flag"/>
             <span>South Korea / Won</span>
           </li>
-          <li>
+          <li className={styles.li}>
             <MdSecurity/>
             <span>Buyer Protection</span> 
           </li>
-          <li>
+          <li className={styles.li}>
           <span>Customer Service</span>
           </li>
-          <li>
+          <li className={styles.li}>
           <span>Help</span>
           </li>
-          <li>
+          <li className={styles.li}>
             <BsSuitHeart/>
             <Link href="/profile/wishlist">
               <span>Wishlist</span>
             </Link>
           </li>
-          <li>
+          <li className={styles.li}>
             {
               // when loggedIn is true, then it displays the user's account name that is fetched from the server. Otherwise, it displays the default account icon.
               // ! Add a conditional statement to display either female or male icon for the account after checking the gender of the user.
