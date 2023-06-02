@@ -1,27 +1,41 @@
 $blue-color: #2f82ff;
 $grey-color: #f8f8f8;
 $shadow-1: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
 .btn_primary {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    background: #000;
-    color: #fff;
+    background: #white;
+    color: black;
     font-weight: 600;
     cursor: pointer;
     width: 100%;
     border-radius: 2px;
+
+    &:hover {
+        color: white;
+        background-color: black;
+        transition: all 0.25s ease-in-out;
+    }
 }
+
 .btn_secondary {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    color: $blue-color;
-    background: $grey-color;
+    color: black;
+    background: white;
     font-weight: 600;
     cursor: pointer;
     width: 100%;
     border-radius: 2px;
+
+    &:hover {
+        color: white;
+        background-color: black;
+        transition: all 0.25s ease-in-out;
+    }
 }

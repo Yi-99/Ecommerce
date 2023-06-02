@@ -8,7 +8,8 @@ import {RiAccountPinCircleLine, RiArrowDropDownFill} from 'react-icons/ri'
 
 export default function Top() {
   const [loggedIn, setLoggedIn] = useState(false);
-
+  const [male, setMale] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   return (
     <div className={styles.top}>
@@ -34,7 +35,7 @@ export default function Top() {
               <span>Wishlist</span>
             </Link>
           </li>
-          <li className={styles.li}>
+          <li className={styles.li} onMouseOver={() => setVisible(true)} onMouseLeave={() => setVisible(false)}>
             {
               // when loggedIn is true, then it displays the user's account name that is fetched from the server. Otherwise, it displays the default account icon.
               // ! Add a conditional statement to display either female or male icon for the account after checking the gender of the user.
@@ -56,7 +57,7 @@ export default function Top() {
                 </div>
               </li>)
             }
-            <UserMenu loggedIn={loggedIn}/>
+            { visible && <UserMenu loggedIn={loggedIn}/>}
           </li>
         </ul>
       </div>

@@ -1,5 +1,7 @@
 import styles from './styles.module.scss';
 import Link from 'next/link';
+import femaleAvatar from '../../public/avatar-female.png';
+import maleAvatar from '../../public/avatar-male.png';
 
 export default function UserMenu({loggedIn}) {
     return (
@@ -8,7 +10,7 @@ export default function UserMenu({loggedIn}) {
             {
                 loggedIn ? (
                 <div className={styles.flex}>
-                    <img src="https://www.pngart.com/files/5/User-Avatar-PNG-Transparent-Image.png"
+                    <img src={femaleAvatar}
                     alt="Profile Picture"
                     className={styles.menu__img}/>
                     <div className={styles.col}>
@@ -19,10 +21,9 @@ export default function UserMenu({loggedIn}) {
                 </div>) : (
                     <div className={styles.flex}>
                         <button className={styles.btn_primary}>Register</button>
-                        <button className={styles.Linkbtn_secondary}>Login</button>
+                        <button className={styles.btn_secondary}>Login</button>
                     </div>
-                )
-            }
+            )}
             <ul>
                 <li>
                     <Link href="/profile">Account</Link>
