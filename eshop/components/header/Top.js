@@ -6,7 +6,7 @@ import {BsSuitHeart} from 'react-icons/bs';
 import UserMenu from './UserMenu';
 import {RiAccountPinCircleLine, RiArrowDropDownFill} from 'react-icons/ri'
 
-export default function Top() {
+export default function Top({ country }) {
   const [loggedIn, setLoggedIn] = useState(false);
   const [male, setMale] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -16,8 +16,8 @@ export default function Top() {
       <div className={styles.top__container}>
         <ul className={styles.top__list}>
           <li className={styles.li}>
-            <img src="https://static.vecteezy.com/system/resources/previews/011/571/524/original/circle-flag-of-south-korea-free-png.png" alt="South Korean flag"/>
-            <span>South Korea / Won</span>
+            <img src={country?.flag} alt="country flag"/>
+            <span>{country?.name} / Won</span>
           </li>
           <li className={styles.li}>
             <MdSecurity/>
