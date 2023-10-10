@@ -5,9 +5,10 @@ import {MdSecurity} from 'react-icons/md';
 import {BsSuitHeart} from 'react-icons/bs';
 import UserMenu from './UserMenu';
 import {RiAccountPinCircleLine, RiArrowDropDownFill} from 'react-icons/ri'
+import { useSession } from 'next-auth/react'
 
 export default function Top({ country }) {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const { data: session } = useSession();
   const [male, setMale] = useState(false);
   const [visible, setVisible] = useState(false);
 
@@ -39,13 +40,12 @@ export default function Top({ country }) {
             {
               // when loggedIn is true, then it displays the user's account name that is fetched from the server. Otherwise, it displays the default account icon.
               // ! Add a conditional statement to display either female or male icon for the account after checking the gender of the user.
-              loggedIn ? (
+              session ? (
                 <li>
                 <div className={styles.flex}>
-                  
-                  <img src="https://www.pngart.com/files/5/User-Avatar-PNG-Transparent-Image.png"
-                  alt="Profile Picture"/>
-                  <span>Account</span>
+
+                  <img src={session.user.image} alt=""/>
+                  <span>{session.user.name}</span>
                   <RiArrowDropDownFill/>
                 </div>
               </li>) : (
@@ -57,7 +57,7 @@ export default function Top({ country }) {
                 </div>
               </li>)
             }
-            { visible && <UserMenu loggedIn={loggedIn}/>}
+            { visible && <UserMenu session={session}/>}
           </li>
         </ul>
       </div>
