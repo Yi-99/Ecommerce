@@ -5,8 +5,22 @@ import styles from '../styles/Signin.module.scss'
 import {BiLeftArrowAlt} from 'react-icons/bi'
 import Link from 'next/link';
 import { Formik, Form } from 'formik'
+import LoginInput from '../components/inputs/loginInput'
+import { useState } from 'react'
+
+const defaultValues = {
+  login_email: "",
+  login_password: "",
+}
+
+const handleChange = (e) => {
+  const { name, value } = e.target
+}
 
 export default function signin() {
+  const [user, setUser] = useState(defaultValues)
+  const { login_email, login_password } = user
+
   return (
     <div>
       <Header/>
@@ -28,7 +42,16 @@ export default function signin() {
               {
                 (form) => {
                   <Form>
-                    <input type="text"/>
+                    <LoginInput name="login_email" 
+                    type="email" 
+                    icon="user" 
+                    placeholder="Email Address" 
+                    required />
+                    <LoginInput name="login_password" 
+                    type="text" 
+                    icon="password" 
+                    placeholder="Password"
+                    required />
                   </Form>
                 }
               }
